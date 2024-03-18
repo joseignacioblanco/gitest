@@ -34,5 +34,7 @@ y por ultimo:  git push -u origin main
 
 donde main creo que es el nombre que le dia antes
 
+luego de poner todo eso, me va pedir el usuario y el token (por lo menos lo pide asi en linux)
+
 
 -------------------------------------------------------------------------
