@@ -1,11 +1,201 @@
 
 
+comenzando: 
+
+datos que nececito
+
+e-mail:
+usuario:
+contraseña:
+token:
+segundo factor de autenticacion:
+
+
+-----------------------------------------------------
+COMANDITO 1
+
+para configurar la gitiada
+
+> git config --global user.email
+
+esto obvio que configura el meil
+aparte de global puede ser local y no se que mas
+
+> git config --global user.name
+
+para configurar el nombre de usuario.
+
+
+----------------------------------------------------------
+COMANDITO 2
+
+> git init
+
+esto lo uso cuando quiero comenzar a gitiar una carpeta
+cuado hago esto en la carpeta se crea un archivo oculto
+.git que va a encargarse de hacer el seguimiento de todo
+este comando de git init lo debo poner una vez posicionado
+en la carpeta que quiero gitiar
+
+---------------------------------------------------------
+COMANDITO 3
+
+> git add <FILE>
+
+uan vez gitiada la carpeta, si quiero agregar al esteiying
+area algun archivo nuevo o algun cambio nuevo tengo que 
+poner git add y seguido el nombre del archivo o tambien 
+puedo porner la direccion completa o directorio acutal 
+que es un punto (.)  o directorio anterior (..)  etc
+si quiero estaigyiniar todo lo que contiene la carpeta 
+en donde estoy posicionado , hago "> git add ."
+
+git add .  ignora las carpetas que estan vacias aparentemente
+
+---------------------------------------------------------
+COMANDITO 4
+
+> git status
+
+este comandito me va mostrar el estatus de este directorio
+gitiado en el que estoy trabajando y me va decir si hay 
+archivos por agregar, si hay algo por comitiar o si esta
+todo limpio.
+
+
+--------------------------------------------------------
+COMANDITO 5
+
+> git commit -m "comentario de lo que comiteo"
+
+con ese comandito lo que voy a hacer es un commit  que
+vendria a ser la confirmacion de los cambios y pasarlos
+al repositorio local. la opcion de -m y luego del espacio
+entre comillas el comentario, es para que lo comitee con
+el comentario directamente y no me abra el vim o algun
+otro editor para escribir los comentarios.
+
+la primera vez que quiera hacer commit, si no configurE
+todavia el usuario y el meil, aqui me lo va pedir
+
+-------------------------------------------------------
+COMANDITO 6
+
+> git clone <DIRECCION DEL REPOSITORIO>
+ hace una copia o un clon del repositorio remoto al local
+
+
+-----------------------------------------------------
+COMANDITO 7
+
+git pull
+
+hace una actualizacion de alguna parte especifica de algun
+repositorio remoto hacia el repositorio local
+
+
+--------------------------------------------------
+COMANDITO 8
+
+> git push
+hace una actualizacion del repo local hacia el remoto
+ver tambien ejemplo 1
+
+-------------------------------------------------
+COMANDITO 9
+
+> git log
+
+este comando me muestra el historial de todo lo que 
+voy haciendo e incluso muestra los hash de cada comit
+y la cabecera del proyecto y las ramas etc etc
+
+
+----------------------------------------------------------
+COMANDITO 10
+
+> git checkout -- <FILE_NAME>
+
+va a descartar los ultimos cambios que he agregado
+
+por ejemplo puede ser "git checkout -- index.html"
+
+------------------------------------------------------
+COMANDITO 11
+
+ > git diff <FILE_NAME>
+
+por ejemplo si hago "git diff index.html"
+
+este comandito me va a mostrar las diferencias que hay
+entre el archivo original comitiado antes y los cambios
+que he ingresado antes de hacer el otro comit
+
+
+-------------------------------------------------------
+COMANDITO 12 (no es un comando es un archivo)
+
+ .gitignore
+
+es un archivito de texto que puedo subir al repositorio
+y dentro de el archivito tengo que listar todos los
+nombres de archivos que quiero que ignore y que no 
+me siga para comitiar y demas. entonces asi el git no
+le da bola.
+
+ejemplo: 
+
+el archivo se debe llamar .gitignore
+contenido: 
+
+test
+*.txt
+mologaideses
+
+
+etc etc etc  donde esos nombres son los nombres de carpetas
+o de archivos que quiero ignorar. tambien con comodines
+
+---------------------------------------------------------
+COMANDITO 13
+
+> git branch
+
+me muestra en que rama estoy
+
+-------------------------------------------------------
+COMANDITO 14
+
+> git branch mondongo
+
+de esta manera creo la rama mondonogo.  asi solo creo
+la nueva rama y si pongo git branch  me va mostrar todas
+las que tengo creadas hasta el momento. para cambiar entre
+ramas uso el comando git chackout mondongo donde mondongo
+es el nombre de la rama a la que quiero ir.
+Obcserbar que es el mismo comando que use antes para 
+volver atras los cambios: git checkout --
+bueno, es parecido nomas
+
+--------------------------------------------------------
+COMANDITO 15
+
+> git checkout mondongo
+
+este si es el comando para poder cambiar entre ramas 
+donde tengo que escribir el nombre de la rama a la cual
+me quiero mover: en este caso se llamaba la rama mondongo
+
+---------------------------------------------------------
+COMANDITO 16
 
 
 
 
 
 ----------------------------------------------------------------------
+
+EJEMPLO 1
 
 Ahora vamos a ver una forma de  como hacer para subir
 un repositorio desde mi pc al repositorio remoto de github
@@ -22,17 +212,30 @@ repositorio vacio y ahi nomas me da las inicaciones para poder
 subir lo que tengo en el repo local de mi pc:
 
 
-git remote add origin https://github.com/joseignacioblanco/gitest.git
+> git remote add origin https://github.com/joseignacioblanco/gitest.git
 
 donde despues de origin va la ruta de el repositorio creado obvio
 
-luego ponemos : git branch -M main
+luego ponemos : > git branch -M main
 
 donde creo que en lugar de main puedo ponerle master o mondongo
 
-y por ultimo:  git push -u origin main
+y por ultimo: > git push -u origin main
 
 donde main creo que es el nombre que le dia antes
 
 
 -------------------------------------------------------------------------
+
+
+glosario
+
+working area
+
+staging area
+
+repository
+
+commits
+
+
