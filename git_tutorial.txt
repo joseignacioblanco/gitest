@@ -93,13 +93,41 @@ git pull
 hace una actualizacion de alguna parte especifica de algun
 repositorio remoto hacia el repositorio local
 
-
+parece que se puede poner git pull <FILE_NAME>
 --------------------------------------------------
 COMANDITO 8
 
 > git push
 hace una actualizacion del repo local hacia el remoto
 ver tambien ejemplo 1
+
+cuando una vez hice git push me decia que alguien mas 
+habia estado pushiando al repo remoto y que primero tengo
+que hacer un pull para ponerme al dia y mergiar todo
+entonces hago git pull y me dice que va mergiar lo del 
+otro usuario con lo que yo quiero puchiar con cambios
+y ahi mismo me hace el merge y me hace poner tambien
+un comentario con el editor de texto. yo usaba el nano
+asi que despues de cometar todo le puse control O de
+omar para guardar y control x para salir y ahi se merjea
+tambien me dice que si escribo lineas con # el comentario
+se ignora.
+
+obvio que tambien pide el usuario y el token
+
+
+aqui tambien parece que se puede especificar los archivos
+con git push <FILE_NAME>
+
+pero aparte tambien parece que la primera vez que uno
+hace el push tiene que poner 
+
+ > git push -u origin master
+o bien sino
+ > git push -u origin main
+
+hay que investigar un poco mas por que se pone con esos
+modificadores y que significan en concreto
 
 -------------------------------------------------
 COMANDITO 9
@@ -110,6 +138,9 @@ este comando me muestra el historial de todo lo que
 voy haciendo e incluso muestra los hash de cada comit
 y la cabecera del proyecto y las ramas etc etc
 
+cuando hay mucho info de log del istorial me va mostrando
+pantalla por pantalla y voy bajando con el enter y despues
+salgo con Q de quit.
 
 ----------------------------------------------------------
 COMANDITO 10
@@ -188,6 +219,21 @@ me quiero mover: en este caso se llamaba la rama mondongo
 
 ---------------------------------------------------------
 COMANDITO 16
+
+> git reset HEAD <FILE_NAME>
+
+parece que este comandito me resetea o me saca del esteiyin
+area los add. que hice en el paso anterior y antes de comitiar
+pbviamente que lo hace desde el HEAD o sea en donde estoy.
+
+
+---------------------------------------------------------
+COMANDITO 17
+
+
+
+
+
 
 
 
