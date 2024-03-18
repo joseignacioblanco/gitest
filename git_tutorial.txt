@@ -1,0 +1,38 @@
+
+
+
+
+
+
+
+----------------------------------------------------------------------
+
+Ahora vamos a ver una forma de  como hacer para subir
+un repositorio desde mi pc al repositorio remoto de github
+
+
+1. Por ejemplo yo tengo una carpeta "Nueva_Carpeta"
+en donde estuve trabajando con mis archivos dentro
+se supone que ya hice git init, git add, git commit, etc etc
+ya la tengo lista en mi pc que es el repo local y para subirla
+a un repo remoto de github primero debo crear el repositorio 
+remoto en el github asi que vo voy a agregar repositorio, le
+doy un nombre, publico, etc etc y lo creo.  obvio que a se crea un
+repositorio vacio y ahi nomas me da las inicaciones para poder 
+subir lo que tengo en el repo local de mi pc:
+
+
+git remote add origin https://github.com/joseignacioblanco/gitest.git
+
+donde despues de origin va la ruta de el repositorio creado obvio
+
+luego ponemos : git branch -M main
+
+donde creo que en lugar de main puedo ponerle master o mondongo
+
+y por ultimo:  git push -u origin main
+
+donde main creo que es el nombre que le dia antes
+
+
+-------------------------------------------------------------------------
