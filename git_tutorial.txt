@@ -16,14 +16,16 @@ COMANDITO 1
 
 para configurar la gitiada
 
-> git config --global user.email
+> git config --global user.email "elmeil@gmail.com"
 
 esto obvio que configura el meil
-aparte de global puede ser local y no se que mas
+aparte de global puede ser local y sin nada.
 
-> git config --global user.name
+> git config --global user.name "nombredeusuario"
 
-para configurar el nombre de usuario.
+para configurar el nombre de usuario. por convencion
+siempre se pone el mismo nombre de usuario que utilizo
+para github
 
 
 ----------------------------------------------------------
@@ -88,18 +90,35 @@ COMANDITO 6
 -----------------------------------------------------
 COMANDITO 7
 
-git pull
+ > git pull
 
 hace una actualizacion de alguna parte especifica de algun
 repositorio remoto hacia el repositorio local
 
-parece que se puede poner git pull <FILE_NAME>
+generalmente con git pull y nada mas ya anda pero si 
+pide user y token
+
+parece que se puede poner "git pull <FILE_NAME>"
+
+para cuando es algo especifico:
+
+ > git pull origin main
+
+donde ahi ponemos origin que es el nombre que le dimos
+al repositorio remoto y main viene siendo el nombre de
+la rama que queremos pulliar en este caso la principal
+que suele ser main o master
+
+
 --------------------------------------------------
 COMANDITO 8
 
 > git push
 hace una actualizacion del repo local hacia el remoto
 ver tambien ejemplo 1
+
+generalmente solo con git push y nada mas ya anda
+pero antes pide usuario y token por lo menos en raspbian
 
 cuando una vez hice git push me decia que alguien mas 
 habia estado pushiando al repo remoto y que primero tengo
@@ -128,6 +147,15 @@ o bien sino
 
 hay que investigar un poco mas por que se pone con esos
 modificadores y que significan en concreto
+
+parece que le dice que va desde el repositorio local
+que es origin hacia el remoto que es master o main 
+segun como se configure
+
+el origin es el nombre que se le da al repositorio
+remoto por defecto y master o main es el nombre de 
+la rama que se da por defecto a la principal
+despues podemos crear otras ramas con otros nombres
 
 -------------------------------------------------
 COMANDITO 9
@@ -162,6 +190,17 @@ este comandito me va a mostrar las diferencias que hay
 entre el archivo original comitiado antes y los cambios
 que he ingresado antes de hacer el otro comit
 
+pero tambien puedo ver diferencias entre archivos de
+distintas ramas
+
+> git diff <rama_1> <rama_2>
+ ejemplo "git diff master mondongo"
+
+y me muestra que tiene la primera respecto de la segunda
+pero cambia la informacion segun en que rama este parado
+o bien sino mejor dicho en el orden que pongo las ramas 
+"git diff mondongo master"
+
 
 -------------------------------------------------------
 COMANDITO 12 (no es un comando es un archivo)
@@ -192,7 +231,7 @@ COMANDITO 13
 
 > git branch
 
-me muestra en que rama estoy
+me muestra en que rama estoy parado
 
 -------------------------------------------------------
 COMANDITO 14
@@ -208,6 +247,24 @@ Obcserbar que es el mismo comando que use antes para
 volver atras los cambios: git checkout --
 bueno, es parecido nomas
 
+si quiero cambiarle el nombre a la rama mondongo puedo
+poner el comando -m de modificar
+
+> git branch -m mondongo coyuya
+
+y de esta manera le cambia de nombre mondongo a coyuya
+
+tambien puedo usar el comando -d de delete para eliminar
+una rama
+
+ > git branch -d coyuya 
+
+y asi elimino la rama coyuya pero tengo que estar parado
+en una rama distinta porque sino me dice que no puede
+
+esto me lleva a preguntarme si puedo eliminar la rama main
+y en caso afirmativo cual pasa a ser la rama main ahora?
+
 --------------------------------------------------------
 COMANDITO 15
 
@@ -216,6 +273,14 @@ COMANDITO 15
 este si es el comando para poder cambiar entre ramas 
 donde tengo que escribir el nombre de la rama a la cual
 me quiero mover: en este caso se llamaba la rama mondongo
+
+
+parece que si hago cambios en una rama nueva, los cambios
+no van a ser de esa rrama hasta que los comitee. asi que 
+en el directorio van a estar los archivos para todas las 
+ramas indistintamente hasta que los comitee para una en 
+particular
+
 
 ---------------------------------------------------------
 COMANDITO 16
@@ -230,14 +295,52 @@ pbviamente que lo hace desde el HEAD o sea en donde estoy.
 ---------------------------------------------------------
 COMANDITO 17
 
+ > git remote add origin <URL_HTTP>
+
+parece que este comando le dice que vamos a asociar un
+origen de codigos o sea un repositorio local al remoto
+de github y le dice cual es la direccion del remoto
+ejemplo https://github.co./joseignacioblanco/gitest.git
 
 
+-----------------------------------------------------
+COMANDITO 18
+
+ > Readme.md (no es comando)
+
+es un archivo que se agrega para usar el archivo de 
+extension mark doun para dar una descripcion bonit de
+lo que se trata el repositorio en la pantalla de github
 
 
+------------------------------------------------------
+COMANDITO 19
 
+> git merge
 
+ > git merge <rama_origen> <rama_destino>
 
+este comando unifica dos ramas en una sola
 
+ si quiero ir de la mondongo a la main debo poner
+
+"git merge mondongo main"  y esto actualiza y fusiona
+la rama main  con los cambios que tenga mondongo
+
+pero lo que si es importante es que me tengo que parar
+antes de hacer el merge en la rama main que es la que no
+esta actualizada porque si me paro en mondongo que es la
+que tiene que aportar los cambios a main entonces me va
+decir que ya esta todo actualizado
+
+esto me hace dudar del orden en que se ponen las ramas...
+
+o sea que me paro en la rama que va recibir los cambios
+a fusionar. entonces hago "git checkout main" y luego 
+"git merge mondongo main"
+
+luego de actualizar la rama main no debo olvidar hacer 
+el correspondiente "git add." y el "git commit" correspondiente
 
 ----------------------------------------------------------------------
 
@@ -274,6 +377,51 @@ luego de poner todo eso, me va pedir el usuario y el token (por lo menos lo pide
 
 
 -------------------------------------------------------------------------
+Para crear los acces token voy al github
+arriba a la derecha en el perfil de usuario
+voy a seetings
+luego a developer seetings
+luego a personal acces tokens
+luego a generate new token
+
+le pongo un nombre descriptivo
+le pongo la caducidad
+le pongo que quiero que maneje
+
+luego generate token y lo copio para tenerlo guardado
+porque sino no me lo muestra mas creo jajajaja
+
+
+luego para configurar el gitbayh hago asi:
+
+
+git config user.name "nombredeusuaario" (para el nombre de usuario)
+git config user.email "meil@gmail.com"  (para el mEil)
+
+esto ya lo sabiamos (puede ir con comillas o no al parecer)
+
+
+y ahora para el token
+
+got config user.password "el_chorizo_token" (para el token)
+
+ojo que no es la contraseña de la cuenta sino el token
+lo que no es lo mismo.
+
+no olvidar tambie que si hago todo por primera vez,
+tengo que configurar la comunicacion con el repo local y
+el remoto y eso se hacia con
+
+git remote add origin <https://github.com/blablabla>
+
+fijate que ahi le da el apodo del repo remoto y la url
+el apodo es origin por convencion
+
+si luego hago tambien por primera vez el git add el git commit
+y el git push hago "git push -u origin main" 
+
+
+-----------------------------------------------------
 
 
 glosario
